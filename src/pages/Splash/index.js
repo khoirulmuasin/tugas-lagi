@@ -1,14 +1,32 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
+import React, { useEffect } from 'react'
+import { SplashBackground, logo } from '../../assets'
 
-const Splash = () => {
+const Splash = ({ navigation }) => {
+
+  //useEffect(() =>{
+  //  setTimeout(() => {
+  //    navigation.replaces('MainApp');
+  //  }, 3000)
+  //}, [navigation]);
+
   return (
-    <View>
-      <Text> Splash </Text>
-    </View>
+    <ImageBackground source={SplashBackground} style={styles.beckgroud}>
+      <Image source={logo} style={styles.logo}/>
+    </ImageBackground>
   )
 }
 
 export default Splash
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  beckgroud: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  logo: {
+    width: 222,
+    height: 105
+  }
+})
