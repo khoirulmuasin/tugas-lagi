@@ -1,14 +1,31 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { View, Text, Button, StyleSheet } from 'react-native';
 
-const Akun = () => {
+const AkunScreen = () => {
   return (
-    <View>
-      <Text>Akun</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Halaman Akun</Text>
+      <Text>Nama Pengguna: John Doe</Text>
+      <Text>Email: johndoe@example.com</Text>
+      <Button title="Keluar" onPress={handleLogout} />
     </View>
-  )
-}
+  );
+};
 
-export default Akun
+const handleLogout = () => {
+  alert('Anda telah keluar dari akun');
+};
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 24,
+    marginBottom: 20,
+  },
+});
+
+export default AkunScreen;
