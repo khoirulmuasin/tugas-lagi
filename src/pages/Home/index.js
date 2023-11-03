@@ -1,14 +1,29 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { View, Text, Button, StyleSheet } from 'react-native';
 
-const Home = () => {
+const HomeScreen = () => {
+  const handleTopUpPress = () => {
+    alert('Anda akan mengisi pulsa');
+  };
+
   return (
-    <View>
-      <Text>Home lagi</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Selamat Datang di Aplikasi Pengisian Pulsa</Text>
+      <Button title="Isi Pulsa" onPress={handleTopUpPress} />
     </View>
-  )
-}
+  );
+};
 
-export default Home
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 24,
+    marginBottom: 20,
+  },
+});
 
-const styles = StyleSheet.create({})
+export default HomeScreen;
