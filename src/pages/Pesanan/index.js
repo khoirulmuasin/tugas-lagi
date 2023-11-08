@@ -1,14 +1,24 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react';
+import { View, Text, TextInput, Button } from 'react-native';
 
-const Pesanan = () => {
+const PulsaPurchase = () => {
+  const [nominal, setNominal] = useState('');
+  
+  const handlePurchase = () => {
+    console.log(Membeli pulsa dengan nominal: ${nominal});
+  };
+
   return (
     <View>
-      <Text>Pesanan 12345</Text>
+      <Text>Masukkan nominal pulsa:</Text>
+      <TextInput
+        placeholder="Nominal pulsa"
+        onChangeText={(text) => setNominal(text)}
+        value={nominal}
+      />
+      <Button title="Beli Pulsa" onPress={handlePurchase} />
     </View>
-  )
-}
+  );
+};
 
-export default Pesanan
-
-const styles = StyleSheet.create({})
+export default PulsaPurchase;
